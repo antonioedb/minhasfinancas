@@ -1,7 +1,8 @@
 package br.com.antonioelias.minhasfinancas.service.impl;
 
+import java.rmi.server.UID;
 import java.util.Optional;
-
+import java.util.UUID;
 
 import javax.transaction.Transactional;
 
@@ -61,6 +62,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 			throw new RegraNegocioExcepiton ("Já existe um usuário cadastrado com este email.");
 		}	
 		
+	}
+
+	@Override
+	public Optional<Usuario> obterPorId(UUID id) {
+		
+		return repository.findById(id);
 	}
 	
 

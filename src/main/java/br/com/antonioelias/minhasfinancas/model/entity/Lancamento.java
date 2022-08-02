@@ -1,5 +1,6 @@
 package br.com.antonioelias.minhasfinancas.model.entity;
 
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
@@ -20,9 +21,17 @@ import javax.persistence.Table;
 
 import br.com.antonioelias.minhasfinancas.model.enums.StatusLancamento;
 import br.com.antonioelias.minhasfinancas.model.enums.TipoLancamento;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "lancamento")
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Lancamento implements Serializable{
 	
 	 private static final long serialVersionUID = 1L;
@@ -41,7 +50,7 @@ public class Lancamento implements Serializable{
 	private Integer ano;
 	
 	@ManyToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
 	
 	@Column
@@ -168,6 +177,14 @@ public class Lancamento implements Serializable{
 		this.status = status;
 	}
 
+	public Lancamento() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Lancamento(UUID idUsuario, String descicao, Integer mes2, Integer ano2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "Lancamento [id=" + id + ", descricao=" + descricao + ", mes=" + mes + ", ano=" + ano + ", usuario="
@@ -175,7 +192,7 @@ public class Lancamento implements Serializable{
 				+ status + "]";
 	}
 
-
+	
 
 	
 	
