@@ -1,9 +1,9 @@
 package br.com.antonioelias.minhasfinancas.api.dto;
 
-import lombok.Builder;
+//import lombok.Builder;
 
 
-@Builder
+//@Builder
 public class UsuarioDTO {
 	
 	private String email;
@@ -26,6 +26,11 @@ public class UsuarioDTO {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public UsuarioDTO() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	

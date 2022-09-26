@@ -19,18 +19,5 @@ public class AtualizaStatusDTO {
 		this.status = status;
 	}
 
-	public AtualizaStatusDTO(String status) {
-		super();
-		this.status = status;
-	}
-
-
-	public AtualizaStatusDTO() {
-		super();
-	}
-
-
-	
-	
 
 }

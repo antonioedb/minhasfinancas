@@ -1,3 +1,4 @@
+
 package br.com.antonioelias.minhasfinancas.model.entity;
 
 
@@ -28,10 +29,10 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "lancamento")
-@Builder
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@Builder
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class Lancamento implements Serializable{
 	
 	 private static final long serialVersionUID = 1L;
@@ -66,6 +67,15 @@ public class Lancamento implements Serializable{
 	@Column
 	@Enumerated(value = EnumType.STRING)
 	private StatusLancamento status;
+
+
+	public Lancamento(UUID idUsuario, String descicao, Integer mes2, Integer ano2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Lancamento() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public UUID getId() {
 		return id;
@@ -143,54 +153,6 @@ public class Lancamento implements Serializable{
 		return serialVersionUID;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(ano, dataCacastro, descricao, id, mes, status, tipo, usuario, valor);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Lancamento other = (Lancamento) obj;
-		return Objects.equals(ano, other.ano) && Objects.equals(dataCacastro, other.dataCacastro)
-				&& Objects.equals(descricao, other.descricao) && Objects.equals(id, other.id)
-				&& Objects.equals(mes, other.mes) && status == other.status && tipo == other.tipo
-				&& Objects.equals(usuario, other.usuario) && Objects.equals(valor, other.valor);
-	}
-
-	public Lancamento(UUID id, String descricao, Integer mes, Integer ano, Usuario usuario, BigDecimal valor,
-			LocalDateTime dataCacastro, TipoLancamento tipo, StatusLancamento status) {
-		super();
-		this.id = id;
-		this.descricao = descricao;
-		this.mes = mes;
-		this.ano = ano;
-		this.usuario = usuario;
-		this.valor = valor;
-		this.dataCacastro = dataCacastro;
-		this.tipo = tipo;
-		this.status = status;
-	}
-
-	public Lancamento() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Lancamento(UUID idUsuario, String descicao, Integer mes2, Integer ano2) {
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "Lancamento [id=" + id + ", descricao=" + descricao + ", mes=" + mes + ", ano=" + ano + ", usuario="
-				+ usuario + ", valor=" + valor + ", dataCacastro=" + dataCacastro + ", tipo=" + tipo + ", status="
-				+ status + "]";
-	}
 
 	
 

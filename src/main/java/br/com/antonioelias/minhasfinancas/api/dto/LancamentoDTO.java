@@ -3,11 +3,15 @@ package br.com.antonioelias.minhasfinancas.api.dto;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Builder
-@Data
+//@Builder
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class LancamentoDTO {
 	
 	private UUID id;
@@ -18,6 +22,8 @@ public class LancamentoDTO {
 	private UUID usuario;
 	private String tipo;
 	private String status;
+	
+	
 
 	public UUID getId() {
 		return id;
